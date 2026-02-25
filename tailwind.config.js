@@ -30,14 +30,19 @@ module.exports = {
           { fontWeight: "700", lineHeight: "1.2", letterSpacing: "-0.02em" },
         ],
         p2: [
-          "1rem",
+          "0.875rem",
           { fontWeight: "400", lineHeight: "1", letterSpacing: "-0.02em" },
+        ],
+        buttonLabel: [
+          "1rem",
+          { fontWeight: "500", lineHeight: "1", letterSpacing: "-0.02em" },
         ],
       },
       colors: {
         dark: "#1E1E22",
         white: "#FFFFFF",
         orange: "#E96744",
+        hoverOrange: "#ff4700",
         red: "#FF2828",
         green: "#008630",
         crimson: "#BE1E22",

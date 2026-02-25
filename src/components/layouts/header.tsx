@@ -20,7 +20,7 @@ export default function Header() {
     <header className="w-full h-16 bg-header-gradient px-6 lg:px-14 py-2 flex items-end fixed top-0 z-50 backdrop-blur-sm">
       <div className="flex flex-row items-end justify-between w-full">
         <div className="flex flex-row items-end">
-          <div className="mr-6 lg:mr-10 flex-shrink-0">
+          <div className="mr-6 lg:mr-10">
             <Image
               src="/icons/header_festival.svg"
               width={160}
@@ -30,6 +30,7 @@ export default function Header() {
             />
           </div>
 
+          {/* Desktop Navigation */}
           <nav className="hidden lg:flex flex-row gap-10">
             <div className="flex flex-row gap-1.5 items-center cursor-pointer hover:opacity-80 transition-opacity">
               <Image
@@ -51,6 +52,7 @@ export default function Header() {
               <p className="text-header text-white">Live</p>
             </div>
 
+            {/* Musical Styles Desktop */}
             <div className="relative h-full flex items-end">
               <button
                 onClick={toggleSubMenuMusical}
@@ -93,10 +95,11 @@ export default function Header() {
               )}
             </div>
 
+            {/* Exclusive Content Desktop */}
             <div className="relative h-full flex items-end">
               <button
                 onClick={toggleSubMenuContent}
-                className="flex flex-row gap-1.5 items-center"
+                className="flex flex-row gap-1.5 items-center focus:outline-none"
               >
                 <Image
                   src="/icons/exclusive_content_icon.svg"
@@ -182,31 +185,32 @@ export default function Header() {
             )}
           </div>
 
+          {/* BOTÃO HAMBÚRGUER (Aparece apenas no mobile) */}
           <button
-            className="lg:hidden text-white flex flex-col gap-1.5 p-2"
+            className="lg:hidden text-white p-2 focus:outline-none"
             onClick={toggleMobileMenu}
           >
-            <div
-              className={`w-6 h-0.5 bg-white transition-all ${isMobileMenuOpen ? "rotate-45 translate-y-2" : ""}`}
-            ></div>
-            <div
-              className={`w-6 h-0.5 bg-white transition-all ${isMobileMenuOpen ? "opacity-0" : ""}`}
-            ></div>
-            <div
-              className={`w-6 h-0.5 bg-white transition-all ${isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
-            ></div>
+            <div className="space-y-1.5">
+              <span
+                className={`block w-6 h-0.5 bg-white transition-all ${isMobileMenuOpen ? "rotate-45 translate-y-2" : ""}`}
+              ></span>
+              <span
+                className={`block w-6 h-0.5 bg-white transition-all ${isMobileMenuOpen ? "opacity-0" : ""}`}
+              ></span>
+              <span
+                className={`block w-6 h-0.5 bg-white transition-all ${isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
+              ></span>
+            </div>
           </button>
         </div>
       </div>
 
+      {/* SIDEBAR MOBILE */}
       <div
-        className={`fixed inset-0 bg-dark z-[100] transition-transform duration-500 lg:hidden ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed inset-0 bg-dark transition-transform duration-300 lg:hidden ${isMobileMenuOpen ? "translate-x-0," : "translate-x-full"}`}
       >
-        <div className="flex justify-end pt-4 pr-4 lg:px-14">
-          <button
-            onClick={toggleMobileMenu}
-            className="hover:opacity-70 transition-opacity"
-          >
+        <div className="flex justify-end ">
+          <button onClick={toggleMobileMenu}>
             <Image
               src="/icons/close_icon.svg"
               width={30}
@@ -214,81 +218,6 @@ export default function Header() {
               alt="close"
             />
           </button>
-        </div>
-
-        <div className="flex flex-col px-8 mt-10 h-full">
-          <nav className="flex flex-col gap-6">
-            <div>
-              <a
-                href="#"
-                className="text-white text-2xl font-bebas flex items-center gap-3"
-              >
-                <Image
-                  src="/icons/home_icon.svg"
-                  width={20}
-                  height={20}
-                  alt="home"
-                />
-                Home
-              </a>
-            </div>
-            <div>
-              <a
-                href="#"
-                className="text-white text-2xl font-bebas flex items-center gap-3"
-              >
-                <Image
-                  src="/icons/live_icon_white.svg"
-                  width={20}
-                  height={20}
-                  alt="live"
-                />
-                Live
-              </a>
-            </div>
-
-            <button
-              onClick={toggleSubMenuMusical}
-              className="text-white text-2xl font-bebas flex justify-between items-center"
-            >
-              Musical Styles <span>{isSubMenuOpenMusical ? "−" : "+"}</span>
-            </button>
-            {isSubMenuOpenMusical && (
-              <div className="flex flex-col gap-4 pl-4 text-white font-montserrat">
-                <a href="#">Rock</a>
-                <a href="#">Pop</a>
-                <a href="#">Trap</a>
-              </div>
-            )}
-            <button
-              onClick={toggleSubMenuContent}
-              className="text-white text-2xl font-bebas flex justify-between items-center"
-            >
-              Exclusive Content <span>{isSubMenuOpenContent ? "−" : "+"}</span>
-            </button>
-            {isSubMenuOpenContent && (
-              <div className="flex flex-col gap-4 pl-4 text-white font-montserrat">
-                <a href="#">Back Stage</a>
-                <a href="#">Interviews</a>
-                <a href="#">Lestest News</a>
-                <a href="#">Last Editions</a>
-                <a href="#">Watch Again</a>
-              </div>
-            )}
-
-            <div className="mt-auto flex items-center gap-4 pt-8">
-              <Image
-                src="/icons/user_icon.svg"
-                width={40}
-                height={40}
-                alt="user"
-                className="rounded-full"
-              />
-              <span className="text-white font-bebas text-xl">
-                Peter Parker
-              </span>
-            </div>
-          </nav>
         </div>
       </div>
     </header>
