@@ -25,6 +25,14 @@ module.exports = {
           "2rem",
           { fontWeight: "700", lineHeight: "1.2", letterSpacing: "-0.02em" },
         ],
+        h4: [
+          "1.5rem",
+          { fontWeight: "700", lineHeight: "1.2", letterSpacing: "-0.02em" },
+        ],
+        h5: [
+          "1.125rem",
+          { fontWeight: "700", lineHeight: "1.2", letterSpacing: "-0.02em" },
+        ],
         h6: [
           "1rem",
           { fontWeight: "700", lineHeight: "1.2", letterSpacing: "-0.02em" },

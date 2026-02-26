@@ -17,7 +17,7 @@ export default function Header() {
   const toggleSubMenuUser = () => setIsSubMenuOpenUser(!isSubMenuOpenUser);
 
   return (
-    <header className="w-full h-16 bg-header-gradient px-6 lg:px-14 py-2 flex items-end fixed top-0 z-50 backdrop-blur-sm">
+    <header className="w-full h-16 bg-header-gradient px-6 lg:px-16 py-2 flex items-end fixed top-0 z-50 backdrop-blur-sm">
       <div className="flex flex-row items-end justify-between w-full">
         <div className="flex flex-row items-end">
           <div className="mr-6 lg:mr-10">
