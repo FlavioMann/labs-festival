@@ -10,7 +10,7 @@ export function AppleCard() {
         <Image src="/icons/apple_logo.svg" width={20} height={24} alt="apple" />
       </div>
 
-      <div className="absolute top-2 right-4 flex items-center gap-1 bg-orange text-white text-[10px] px-2 py-1 rounded-full uppercase font-roboto font-medium tracking-widest z-20 pointer-events-none">
+      <button className="absolute top-2 right-4 flex items-center gap-1 bg-orange text-white text-[10px] px-2 py-1 rounded-full uppercase font-roboto font-medium tracking-widest z-20 pointer-events-none">
         <span>Announcement</span>
         <Image
           src="/icons/info_icon.svg"
@@ -19,7 +19,7 @@ export function AppleCard() {
           alt="info"
           className="brightness-200"
         />
-      </div>
+      </button>
 
       <div className="relative w-1/2 h-full flex items-center z-10">
         <div className="absolute w-44 h-44 bg-white/10 blur-[60px] rounded-full pointer-events-none" />

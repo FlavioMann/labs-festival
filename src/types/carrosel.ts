@@ -1,7 +1,7 @@
 export type Announcement = {
   type: "ad";
   id: number | string;
-  template: "tesla" | "apple"; // No futuro, você pode adicionar 'spotify', 'apple', etc.
+  template: "tesla" | "apple" | "nike"; // No futuro, você pode adicionar 'spotify', 'apple', etc.
 };
 
 export type Artist = {
@@ -25,5 +25,12 @@ export interface LiveEvent {
   stage: string;
   date: string;
   time: string;
+  image: string;
+}
+
+export interface ExclusiveItem {
+  id: number | string;
+  type: "exclusive";
+  title: string;
   image: string;
 }

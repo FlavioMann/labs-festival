@@ -1,23 +1,27 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { ArtistCard } from "./ArtistCard";
-import { TeslaAdCard } from "./TeslaCard";
-import { Announcement, Artist } from "@/types/carrosel";
+import { ExclusiveCard } from "./ExclusiveCard";
+import { Announcement, ExclusiveItem } from "@/types/carrosel";
+import { NikeAdCard } from "./NikeCard";
 
-type Item = Artist | Announcement;
+type Item = ExclusiveItem | Announcement;
 
-interface CarrosselProps {
+interface ExclusiveCarrosselProps {
   title: string;
   items: Item[];
 }
 
-export default function Carrossel({ title, items }: CarrosselProps) {
+export default function ExclusiveCarrossel({
+  title,
+  items,
+}: ExclusiveCarrosselProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
 
+  // --- Lógica de Drag ---
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!scrollRef.current) return;
     setIsDragging(true);
@@ -30,13 +34,16 @@ export default function Carrossel({ title, items }: CarrosselProps) {
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!isDragging || !scrollRef.current) return;
     e.preventDefault();
-    const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = (x - startX) * 2;
-    scrollRef.current.scrollLeft = scrollLeft - walk;
+    const x = e.pageX - startX;
+    const walk = x * 2;
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft = scrollLeft - walk;
+    }
   };
 
   return (
-    <section className="w-full py-10 pl-6 lg:px-0 lg:pl-16 bg-brand-dark overflow-hidden">
+    <section className="w-full  pl-6 lg:px-0 lg:pl-16 bg-brand-dark overflow-hidden">
+      {/* Título no topo, seguindo o padrão do seu exemplo */}
       <h2 className="text-white text-h4 font-roboto mb-8">{title}</h2>
 
       <div
@@ -45,20 +52,21 @@ export default function Carrossel({ title, items }: CarrosselProps) {
         onMouseLeave={handleMouseUpOrLeave}
         onMouseUp={handleMouseUpOrLeave}
         onMouseMove={handleMouseMove}
-        className={`flex flex-nowrap gap-5 pl-1 overflow-hidden select-none transition-cursor duration-100 ${
+        className={`flex flex-nowrap gap-5 pb-5 pt-1 pl-1 overflow-hidden select-none transition-cursor duration-100 ${
           isDragging ? "cursor-grabbing" : "cursor-grab"
         }`}
       >
         {items.map((item) => {
-          if (item.type === "artist") {
-            return <ArtistCard key={item.id} artist={item} />;
+          // Renderiza o Card de Conteúdo Exclusivo (Imagem + Watermark)
+          if (item.type === "exclusive") {
+            return <ExclusiveCard key={item.id} item={item} />;
           }
 
-          if (item.type === "ad" && item.template === "tesla") {
-            return <TeslaAdCard key={item.id} />;
+          // Renderiza o Anúncio da Nike
+          if (item.type === "ad" && item.template === "nike") {
+            return <NikeAdCard key={item.id} />;
           }
 
-          // Caso surja um novo tipo de anúncio no futuro, basta adicionar o 'if' aqui
           return null;
         })}
       </div>

@@ -1,4 +1,5 @@
 import Header from "@/components/layouts/header/header";
+import ExclusiveContent from "@/components/sections/ExclusiveContent";
 import FeaturedBanner from "@/components/sections/FeaturedBanner";
 import GenreMusicalFestival from "@/components/sections/GenreMusicalFestival";
 import HeroVideo from "@/components/sections/HeroVideo";
@@ -16,6 +17,7 @@ export default function Home() {
       <FeaturedBanner />
       <InLive />
       <YesterdayShows />
+      <ExclusiveContent />
     </main>
   );
 }
