@@ -3,13 +3,13 @@ import Image from "next/image";
 export function TeslaAdCard() {
   return (
     <div className="relative min-w-[380px] lg:min-w-[580px] aspect-[16/9] rounded-xl flex flex-row p-8 items-center border border-white/5 overflow-hidden cursor-pointer bg-[#1E1E22]">
-      <div className="absolute right-[-10%] top-[10%] opacity-10 pointer-events-none">
+      <div className="absolute right-[-13%] top-[20%] opacity-10 pointer-events-none">
         <Image
           src="/icons/tesla_logo.svg"
           width={400}
           height={400}
           alt="tesla_watermark"
-          className="w-[300px] h-[300px] lg:w-[400px] lg:h-[400px]"
+          className="w-[300px] h-[300px] lg:w-[450px] lg:h-[450px]"
         />
       </div>
 

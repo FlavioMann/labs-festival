@@ -42,8 +42,7 @@ export default function ExclusiveCarrossel({
   };
 
   return (
-    <section className="w-full  pl-6 lg:px-0 lg:pl-16 bg-brand-dark overflow-hidden">
-      {/* Título no topo, seguindo o padrão do seu exemplo */}
+    <section className="w-full  pl-6 lg:px-0 lg:pl-16 bg-dark overflow-hidden">
       <h2 className="text-white text-h4 font-roboto mb-8">{title}</h2>
 
       <div

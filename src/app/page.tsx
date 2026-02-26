@@ -1,10 +1,13 @@
 import Header from "@/components/layouts/header/header";
 import ExclusiveContent from "@/components/sections/ExclusiveContent";
 import FeaturedBanner from "@/components/sections/FeaturedBanner";
+import FeaturedBannerDigital from "@/components/sections/FeaturedBannerDigital";
 import GenreMusicalFestival from "@/components/sections/GenreMusicalFestival";
 import HeroVideo from "@/components/sections/HeroVideo";
 import InLive from "@/components/sections/InLive";
 import LineUp from "@/components/sections/LineUp";
+import RockSingers from "@/components/sections/RockSingers";
+import WatchAgain from "@/components/sections/WatchAgain";
 import YesterdayShows from "@/components/sections/YesterdayShows";
 
 export default function Home() {
@@ -18,6 +21,9 @@ export default function Home() {
       <InLive />
       <YesterdayShows />
       <ExclusiveContent />
+      <RockSingers />
+      <FeaturedBannerDigital />
+      <WatchAgain />
     </main>
   );
 }

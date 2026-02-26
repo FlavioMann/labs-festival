@@ -6,9 +6,9 @@ export function ExclusiveCard({ item }: { item: ExclusiveItem }) {
     <div className="relative min-w-[440px] h-52 aspect-video rounded-xl overflow-hidden group cursor-pointer border border-white/5">
       <Image src={item.image} alt={item.title} fill className="object-cover" />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90  z-10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 z-10" />
 
-      <div className="absolute right-0 bottom-0 pointer-events-none  z-20">
+      <div className="absolute right-0 bottom-0 pointer-events-none z-20">
         <Image
           src="/icons/watermark_w.svg"
           alt="watermark"

@@ -32,7 +32,7 @@ const banners = [
   },
   {
     id: 3,
-    image: "/assets/banner/coke_diet.webp",
+    image: "/assets/banner/only_spiced_coke.png",
     link: "https://www.coca-cola.com/us/en/brands/diet-coke",
     title: "",
     subtitle: "",
@@ -42,7 +42,7 @@ const banners = [
   },
 ];
 
-export default function FeaturedBanner() {
+export default function FeaturedBannerDigital() {
   const settings = {
     dots: true,
     infinite: true,
