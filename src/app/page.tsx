@@ -4,6 +4,7 @@ import GenreMusicalFestival from "@/components/sections/GenreMusicalFestival";
 import HeroVideo from "@/components/sections/HeroVideo";
 import InLive from "@/components/sections/InLive";
 import LineUp from "@/components/sections/LineUp";
+import YesterdayShows from "@/components/sections/YesterdayShows";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <GenreMusicalFestival />
       <FeaturedBanner />
       <InLive />
+      <YesterdayShows />
     </main>
   );
 }

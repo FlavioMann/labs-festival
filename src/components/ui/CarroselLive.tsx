@@ -33,7 +33,7 @@ export default function CarroselLive({ events }: CarroselLiveProps) {
   };
 
   return (
-    <section className="w-full pb-10 pl-6 lg:pl-16">
+    <section className="w-full pl-6 lg:pl-16">
       {/* Título da Seção */}
       <h2 className="text-white text-h4 font-roboto mb-8">In Live</h2>
 
