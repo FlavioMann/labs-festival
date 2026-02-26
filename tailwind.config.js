@@ -55,6 +55,7 @@ module.exports = {
         green: "#008630",
         crimson: "#BE1E22",
         header: "#2B2B2E",
+        mediumGray: "#3D3D3F",
       },
       backgroundImage: {
         "header-gradient":

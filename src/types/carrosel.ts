@@ -17,3 +17,13 @@ export interface Genre {
   name: string;
   gradient: string;
 }
+
+export interface LiveEvent {
+  type: "live";
+  id: number;
+  artist: string;
+  stage: string;
+  date: string;
+  time: string;
+  image: string;
+}
