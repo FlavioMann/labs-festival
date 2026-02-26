@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import "./header.css";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -30,8 +31,7 @@ export default function Header() {
             />
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex flex-row gap-10">
+          <nav className={isMobileMenuOpen ? "menu menu--open" : "menu"}>
             <div className="flex flex-row gap-1.5 items-center cursor-pointer hover:opacity-80 transition-opacity">
               <Image
                 src="/icons/home_icon.svg"
@@ -52,7 +52,6 @@ export default function Header() {
               <p className="text-header text-white">Live</p>
             </div>
 
-            {/* Musical Styles Desktop */}
             <div className="relative h-full flex items-end">
               <button
                 onClick={toggleSubMenuMusical}
@@ -95,7 +94,6 @@ export default function Header() {
               )}
             </div>
 
-            {/* Exclusive Content Desktop */}
             <div className="relative h-full flex items-end">
               <button
                 onClick={toggleSubMenuContent}
@@ -185,9 +183,8 @@ export default function Header() {
             )}
           </div>
 
-          {/* BOTÃO HAMBÚRGUER (Aparece apenas no mobile) */}
           <button
-            className="lg:hidden text-white p-2 focus:outline-none"
+            className="lg:hidden text-white p-2 focus:outline-none z-20"
             onClick={toggleMobileMenu}
           >
             <div className="space-y-1.5">
@@ -201,22 +198,6 @@ export default function Header() {
                 className={`block w-6 h-0.5 bg-white transition-all ${isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
               ></span>
             </div>
-          </button>
-        </div>
-      </div>
-
-      {/* SIDEBAR MOBILE */}
-      <div
-        className={`fixed inset-0 bg-dark transition-transform duration-300 lg:hidden ${isMobileMenuOpen ? "translate-x-0," : "translate-x-full"}`}
-      >
-        <div className="flex justify-end ">
-          <button onClick={toggleMobileMenu}>
-            <Image
-              src="/icons/close_icon.svg"
-              width={30}
-              height={30}
-              alt="close"
-            />
           </button>
         </div>
       </div>

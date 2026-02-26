@@ -1,6 +1,8 @@
-import Header from "@/components/layouts/header";
-import HeroVideo from "@/components/sections/heroVideo";
-import LineUp from "@/components/ui/LineUp";
+import Header from "@/components/layouts/header/header";
+import FeaturedBanner from "@/components/sections/FeaturedBanner";
+import GenreMusicalFestival from "@/components/sections/GenreMusicalFestival";
+import HeroVideo from "@/components/sections/HeroVideo";
+import LineUp from "@/components/sections/LineUp";
 
 export default function Home() {
   return (
@@ -8,6 +10,8 @@ export default function Home() {
       <Header />
       <HeroVideo />
       <LineUp />
+      <GenreMusicalFestival />
+      <FeaturedBanner />
     </main>
   );
 }
