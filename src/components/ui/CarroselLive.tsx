@@ -14,7 +14,6 @@ export default function CarroselLive({ events }: CarroselLiveProps) {
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
 
-  // --- Lógica de Arrastar (Drag) ---
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!scrollRef.current) return;
     setIsDragging(true);
@@ -28,7 +27,7 @@ export default function CarroselLive({ events }: CarroselLiveProps) {
     if (!isDragging || !scrollRef.current) return;
     e.preventDefault();
     const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = (x - startX) * 2; // Multiplicador de velocidade do scroll
+    const walk = (x - startX) * 2;
     scrollRef.current.scrollLeft = scrollLeft - walk;
   };
 

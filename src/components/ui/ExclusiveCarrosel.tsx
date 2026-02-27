@@ -21,7 +21,6 @@ export default function ExclusiveCarrossel({
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
 
-  // --- Lógica de Drag ---
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!scrollRef.current) return;
     setIsDragging(true);
@@ -56,12 +55,10 @@ export default function ExclusiveCarrossel({
         }`}
       >
         {items.map((item) => {
-          // Renderiza o Card de Conteúdo Exclusivo (Imagem + Watermark)
           if (item.type === "exclusive") {
             return <ExclusiveCard key={item.id} item={item} />;
           }
 
-          // Renderiza o Anúncio da Nike
           if (item.type === "ad" && item.template === "nike") {
             return <NikeAdCard key={item.id} />;
           }

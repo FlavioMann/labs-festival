@@ -5,12 +5,11 @@ import { GenreCard } from "./GenreCard";
 import { Announcement, Genre } from "@/types/carrosel";
 import { AppleCard } from "./AppleCard";
 
-// Definimos o tipo dos itens específicos para este carrossel
 type GenreItem = Genre | Announcement;
 
 interface GenreCarrosselProps {
   title: string;
-  description?: string; // Opcional, conforme o layout
+  description?: string;
   items: GenreItem[];
 }
 
@@ -68,12 +67,10 @@ export default function GenreCarrossel({
         }`}
       >
         {items.map((item) => {
-          // Renderiza Card de Gênero
           if (item.type === "genre") {
             return <GenreCard key={item.id} genre={item} />;
           }
 
-          // Renderiza Card de Anúncio Apple
           if (item.type === "ad" && item.template === "apple") {
             return <AppleCard key={item.id} />;
           }

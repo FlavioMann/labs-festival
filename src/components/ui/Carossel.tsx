@@ -58,7 +58,6 @@ export default function Carrossel({ title, items }: CarrosselProps) {
             return <TeslaAdCard key={item.id} />;
           }
 
-          // Caso surja um novo tipo de anúncio no futuro, basta adicionar o 'if' aqui
           return null;
         })}
       </div>
