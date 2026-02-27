@@ -1,3 +1,8 @@
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./globals.css";
+
+import Footer from "@/components/layouts/Footer";
 import Header from "@/components/layouts/header/header";
 import ExclusiveContent from "@/components/sections/ExclusiveContent";
 import FeaturedBanner from "@/components/sections/FeaturedBanner";
@@ -24,6 +29,7 @@ export default function Home() {
       <RockSingers />
       <FeaturedBannerDigital />
       <WatchAgain />
+      <Footer />
     </main>
   );
 }

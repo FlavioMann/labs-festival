@@ -9,7 +9,7 @@ export function TeslaAdCard() {
           width={400}
           height={400}
           alt="tesla_watermark"
-          className="w-[300px] h-[300px] lg:w-[450px] lg:h-[450px]"
+          className="w-[300px] h-[300px] lg:w-[450px] lg:h-[450px] "
         />
       </div>
 
@@ -19,11 +19,12 @@ export function TeslaAdCard() {
           width={110}
           height={134}
           alt="tesla_logo"
-          className="w-[70px] h-auto lg:w-[110px]"
+          className="w-[70px] lg:w-[110px]"
         />
         <Image
           src="/assets/car_tesla.png"
           alt="Tesla Red Car"
+          draggable={false}
           width={350}
           height={200}
           className="object-contain"

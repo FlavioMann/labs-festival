@@ -2,8 +2,6 @@
 
 import Slider from "react-slick";
 import Image from "next/image";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Link from "next/link";
 
 const banners = [
@@ -11,12 +9,12 @@ const banners = [
     id: 1,
     image: "/assets/banner/heineken.jpg",
     link: "https://www.heineken.com/br/pt/pagina-inicial",
-    logo: "/icons/heineken_logo.svg", // Logo presente
-    logo2: "/icons/text_heineken.svg", // Logo presente
-    showStar: true, // Ativa a estrela
+    logo: "/icons/heineken_logo.svg",
+    logo2: "/icons/text_heineken.svg",
+    showStar: true,
     title: "HEINEKEN",
     subtitle: "BORN IN AMSTERDAM",
-    extraText: "RAISED BY THE WORD", // Texto adicional para Heineken
+    extraText: "RAISED BY THE WORD",
     btnText: "GET A TASTE OF AMSTERDAM",
     btnColor: "bg-green",
   },
@@ -116,20 +114,6 @@ export default function FeaturedBanner() {
           ))}
         </Slider>
       </div>
-
-      <style jsx global>{`
-        .custom-dots {
-          bottom: -20px !important;
-        }
-        .custom-dots li button:before {
-          color: #e96744 !important;
-          font-size: 8px !important;
-          opacity: 0.3;
-        }
-        .custom-dots li.slick-active button:before {
-          opacity: 1;
-        }
-      `}</style>
     </section>
   );
 }

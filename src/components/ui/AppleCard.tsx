@@ -33,7 +33,7 @@ export function AppleCard() {
             alt="AirPods"
             width={110}
             height={100}
-            className="object-contain"
+            className="object-contain w-auto h-auto"
           />
           <span className="text-white text-base font-normal font-roboto">
             Pro

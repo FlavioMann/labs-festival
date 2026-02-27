@@ -4,7 +4,14 @@ import Image from "next/image";
 export function ExclusiveCard({ item }: { item: ExclusiveItem }) {
   return (
     <div className="relative min-w-[440px] h-52 aspect-video rounded-xl overflow-hidden group cursor-pointer border border-white/5">
-      <Image src={item.image} alt={item.title} fill className="object-cover" />
+      <Image
+        src={item.image}
+        alt={item.title}
+        fill
+        className="object-cover"
+        draggable={false}
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
+      />
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 z-10" />
 
@@ -14,7 +21,7 @@ export function ExclusiveCard({ item }: { item: ExclusiveItem }) {
           alt="watermark"
           width={120}
           height={72}
-          className="brightness-[0.9] bg-opacity-10"
+          className="brightness-[0.9] bg-opacity-10 w-auto h-auto"
         />
       </div>
 

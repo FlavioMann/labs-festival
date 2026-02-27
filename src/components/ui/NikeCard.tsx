@@ -33,6 +33,7 @@ export function NikeAdCard() {
             width={180}
             height={100}
             alt="tenis_nike"
+            draggable={false}
             className="object-contain"
           />
         </div>
@@ -49,7 +50,6 @@ export function NikeAdCard() {
             eyes—from design to testing to styling.
           </p>
 
-          {/* Miniaturas de Cores */}
           <div className="flex items-center gap-4 py-1">
             <div className="flex items-center gap-3 border-r border-black/10 pr-3">
               <Image
@@ -57,12 +57,12 @@ export function NikeAdCard() {
                 width={178}
                 height={24}
                 alt="tenis_rigth"
+                draggable={false}
                 className="object-contain"
               />
             </div>
           </div>
 
-          {/* Botão Learn More */}
           <div>
             <button className="flex flex-row justify-center items-baseline gap-1 bg-[#C39E93] text-white p-1 rounded-sm hover:bg-[#b28d82] transition-colors">
               <p className="text-xs font-medium ">learn more</p>
@@ -78,7 +78,6 @@ export function NikeAdCard() {
         </div>
       </div>
 
-      {/* 3. Borda de Hover padronizada */}
       <div className="absolute inset-0 border-[3px] border-orange opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none z-20" />
     </div>
   );

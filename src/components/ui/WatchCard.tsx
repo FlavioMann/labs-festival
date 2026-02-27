@@ -21,6 +21,7 @@ export function WatchCard({
         src={item.image}
         alt={item.name}
         fill
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
         className="object-cover"
         draggable={false}
       />
@@ -44,7 +45,7 @@ export function WatchCard({
             alt="watermark"
             width={130}
             height={130}
-            className="brightness-0 invert"
+            className="brightness-0 invert w-auto h-auto"
           />
         </div>
       )}

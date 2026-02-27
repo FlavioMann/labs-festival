@@ -12,7 +12,7 @@ export function GenreCard({ genre }: { genre: Genre }) {
           alt="watermark"
           width={120}
           height={72}
-          className=" brightness-0 mix-blend-multiply"
+          className=" brightness-0 mix-blend-multiply w-auto h-auto"
         />
       </div>
 

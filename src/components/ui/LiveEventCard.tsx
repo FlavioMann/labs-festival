@@ -10,7 +10,9 @@ export function LiveEventCard({ event }: { event: LiveEvent }) {
           src={event.image}
           alt={event.artist}
           fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
           className="object-cover"
+          draggable={false}
         />
 
         <div className="absolute inset-0 bg-black/40 flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">

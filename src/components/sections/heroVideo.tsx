@@ -15,7 +15,7 @@ export default function HeroVideo() {
   };
 
   return (
-    <section className="relative w-full aspect-video max-h-[85vh] overflow-hidden bg-black">
+    <section className="relative w-full aspect-video max-h-[85vh] overflow-hidden bg-black hero-video">
       <video
         ref={videoRef}
         autoPlay

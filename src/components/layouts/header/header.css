@@ -8,10 +8,10 @@
     @apply flex
 
     /*mobile*/
-    absolute top-0 left-full w-screen h-screen z-10 bg-dark flex-col items-start justify-start transition-all
+    absolute top-0 p-5 items-start left-full w-screen h-screen z-10 bg-dark flex-col justify-center transition-all
 
     /*desktop*/
-    lg:flex-row lg:gap-10 lg:w-auto lg:h-auto lg:bg-transparent lg:relative lg:top-auto lg:left-auto;
+    lg:flex-row lg:gap-10 lg:p-0 lg:items-center lg:w-full lg:h-auto lg:bg-transparent lg:relative lg:top-auto lg:left-auto;
   }
   .menu--open {
     @apply left-0;
