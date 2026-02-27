@@ -13,7 +13,7 @@ import LineUp from "@/components/sections/LineUp";
 import RockSingers from "@/components/sections/RockSingers";
 import WatchAgain from "@/components/sections/WatchAgain";
 import YesterdayShows from "@/components/sections/YesterdayShows";
-import HeroVideo from "../components/sections/HeroVideo";
+import HeroVideo from "@/components/sections/HeroVideo";
 
 export default function Home() {
   return (
