@@ -1,20 +1,39 @@
-Labs Festival - Plataforma de Streaming Musical
-Este projeto foi desenvolvido para a criação de uma interface de festival de música moderna, responsiva e de alta performance. A aplicação foca na componentização modular, otimização de recursos e uma experiência de usuário fluida através de carrosséis interativos.
+# 🎸 Labs Festival - Music Streaming Experience
 
-🚀 Tecnologias Utilizadas
-Next.js 14+ (App Router): Framework principal para renderização otimizada e roteamento.
+Este projeto foi desenvolvido com foco na criação de uma plataforma de streaming para festivais de música. A aplicação combina um design moderno e as melhores práticas do ecossistema **Next.js 14+**.
 
-TypeScript: Garantia de tipagem estática para maior segurança no desenvolvimento de componentes e tratamento de dados.
 
-Tailwind CSS: Estilização baseada em utilitários para garantir um design responsivo e consistente.
 
-📦 Como Iniciar
+## 🛠️ Tecnologias e Ferramentas
+
+* **Next.js (App Router)**: Renderização eficiente e roteamento moderno.
+* **TypeScript**: Tipagem estática para segurança e robustez do código.
+* **Tailwind CSS**: Estilização atômica para um desenvolvimento ágil e responsivo.
+* **Google Fonts (Roboto & Montserrat)**: Tipografia selecionada para clareza e estética moderna.
+
+
+
 Instale as dependências:
 
+```bash
 npm install
-Execute o servidor de desenvolvimento:
+```
 
+
+
+## 🧪 Rodando Ambiente Local
+
+Modo de Desenvolvimento:
+
+```bash
 npm run dev
+```
 
-Acesse a aplicação:
-Abra http://localhost:3000 no seu navegador para ver o resultado.
+Acessar ambiente local:
+
+```
+http://localhost:3000
+```
+
+
+
