@@ -23,27 +23,26 @@ export default function GenreCarrossel({
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
 
-  const handleMouseDown = (e: React.MouseEvent) => {
+  const handleStart = (clientX: number) => {
     if (!scrollRef.current) return;
     setIsDragging(true);
-    setStartX(e.pageX - scrollRef.current.offsetLeft);
+    setStartX(clientX - scrollRef.current.offsetLeft);
     setScrollLeft(scrollRef.current.scrollLeft);
   };
 
-  const handleMouseUpOrLeave = () => setIsDragging(false);
-
-  const handleMouseMove = (e: React.MouseEvent) => {
+  const handleMove = (clientX: number) => {
     if (!isDragging || !scrollRef.current) return;
-    e.preventDefault();
-    const x = e.pageX - scrollRef.current.offsetLeft;
+    const x = clientX - scrollRef.current.offsetLeft;
     const walk = (x - startX) * 2;
     scrollRef.current.scrollLeft = scrollLeft - walk;
   };
 
+  const handleEnd = () => setIsDragging(false);
+
   return (
-    <section className="w-full flex flex-col lg:flex-row bg-brand-dark overflow-hidden lg:pl-16">
+    <section className="w-full flex flex-col lg:flex-row bg-brand-dark overflow-hidden lg:pl-16 py-10">
       {(title || description) && (
-        <div className="flex flex-col px-6 lg:px-0  shrink-0 justify-start mb-8 lg:mb-0">
+        <div className="flex flex-col px-6 lg:px-0 shrink-0 justify-start mb-8 lg:mb-0">
           <h2 className="text-white text-h5 font-roboto mb-4">{title}</h2>
           {description && (
             <p className="text-white font-roboto mb-5 max-w-[280px]">
@@ -58,26 +57,40 @@ export default function GenreCarrossel({
 
       <div
         ref={scrollRef}
-        onMouseDown={handleMouseDown}
-        onMouseLeave={handleMouseUpOrLeave}
-        onMouseUp={handleMouseUpOrLeave}
-        onMouseMove={handleMouseMove}
-        className={`flex flex-nowrap gap-5  pl-6 overflow-hidden select-none transition-cursor duration-100 ${
+        onMouseDown={(e) => handleStart(e.pageX)}
+        onMouseMove={(e) => {
+          if (isDragging) e.preventDefault();
+          handleMove(e.pageX);
+        }}
+        onMouseUp={handleEnd}
+        onMouseLeave={handleEnd}
+        onTouchStart={(e) => handleStart(e.touches[0].pageX)}
+        onTouchMove={(e) => handleMove(e.touches[0].pageX)}
+        onTouchEnd={handleEnd}
+        className={`flex flex-nowrap gap-5 pl-6 lg:pl-10 select-none transition-cursor duration-100 overflow-x-auto lg:overflow-hidden scrollbar-hide overscroll-x-contain ${
           isDragging ? "cursor-grabbing" : "cursor-grab"
         }`}
+        style={{
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
+          WebkitOverflowScrolling: "touch",
+          touchAction: "pan-y",
+        }}
       >
         {items.map((item) => {
-          if (item.type === "genre") {
+          if (item.type === "genre")
             return <GenreCard key={item.id} genre={item} />;
-          }
-
-          if (item.type === "ad" && item.template === "apple") {
+          if (item.type === "ad" && item.template === "apple")
             return <AppleCard key={item.id} />;
-          }
-
           return null;
         })}
       </div>
+
+      <style jsx global>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </section>
   );
 }
